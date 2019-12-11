@@ -6,7 +6,24 @@
 //  Example 1:
 //  Input: [7,1,5,3,6,4]
 //  Output: 5
-
+maxProfit(List<int> inputList){
+  int maxProfit=0;
+ if(inputList.length<2){
+    return 0;
+  }
+ else{
+   for(int i=0;i<inputList.length-1;i++){
+     for(int j=i+1;j<inputList.length;j++){
+       if(inputList[j]-inputList[i]>maxProfit){
+         maxProfit=inputList[j]-inputList[i];
+       }
+     }
+   }
+ }
+ return maxProfit;
+}
 
 main() {
+  print(maxProfit([7,1,5,3,6,4]));
+
 }
